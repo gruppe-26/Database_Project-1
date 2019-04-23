@@ -1,4 +1,4 @@
 package DAL.DAO;
 
-public class IProductionDAO {
+public interface IProductionDAO {
 }
