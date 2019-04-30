@@ -9,6 +9,6 @@ public interface IRåvareDAO {
 
     void createRåvare(Connection connection, IRåvareDTO råvareDTO);
     RåvareDTO getRåvare(Connection connection, int ID);
-    void updateRåvare(Connection connection, IRåvareDTO råvareDTO);
+    void updateRåvare(Connection connection, IRåvareDTO råvareDTO, int ID);
     void deleteRåvare(Connection connection, int ID);
 }
