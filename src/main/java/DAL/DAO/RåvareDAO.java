@@ -16,7 +16,7 @@ public class RåvareDAO implements IRåvareDAO {
 
     public void getRåvare(Connection connection, int ID) {
         try {
-            PreparedStatement statement = connection.prepareStatement("SELECT * FROM Råvare WHERE ID = ?;")
+            PreparedStatement statement = connection.prepareStatement("SELECT * FROM Råvare WHERE ID = ?;");
         } catch (SQLException e){
             e.printStackTrace();
         }
