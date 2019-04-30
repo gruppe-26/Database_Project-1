@@ -4,9 +4,9 @@ import java.sql.*;
 
 public class Connect implements IConnect {
 
-    private String databaseURL = "jdbc:mysql://ec2-52-30-211-3.eu-west-1.compute.amazonaws.com/s185143?";
-    private String username = "user=s185143";
-    private String password = "password=hYfJLbbto4EHaStuKJn1m";
+    private String databaseURL = "jdbc:mysql://ec2-52-30-211-3.eu-west-1.compute.amazonaws.com/jenje?";
+    private String username = "user=jenje";
+    private String password = "password=lWTVmppL0fSKIItQthPJa";
     private Connection connection;
 
     public void createConnection() throws SQLException {
