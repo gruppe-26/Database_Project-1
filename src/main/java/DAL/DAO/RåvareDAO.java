@@ -29,27 +29,55 @@ public class RåvareDAO implements IRåvareDAO {
 
     public RåvareDTO getRåvare(Connection connection, int ID) {
         try {
-            PreparedStatement statement = connection.prepareStatement("SELECT * FROM Råvare WHERE ID = ?;");
+            PreparedStatement statement = connection.prepareStatement("SELECT * FROM Råvare WHERE IngrediensID = ?;");
 
             statement.setInt(1, ID);
 
             ResultSet resultSet = statement.executeQuery();
 
+            RåvareDTO råvareDTO = null;
+
             while (resultSet.next()){
-                RåvareDTO råvareDTO = new RåvareDTO(resultSet.getInt(1), resultSet.getInt(2), resultSet.getString(3), resultSet.getInt(4), resultSet.getBoolean(5));
+                råvareDTO = new RåvareDTO(resultSet.getInt(1), resultSet.getInt(2), resultSet.getString(3), resultSet.getInt(4), resultSet.getBoolean(5));
             }
+
+            return råvareDTO;
 
         } catch (SQLException e){
             e.printStackTrace();
         }
+
         return null;
     }
 
-    public void updateRåvare(Connection connection, IRåvareDTO råvareDTO) {
+    public void updateRåvare(Connection connection, IRåvareDTO råvareDTO, int ID) {
+        try {
+            PreparedStatement statement = connection.prepareStatement("UPDATE Råvare SET ProduktionsID = ?, IngrediensID = ?, Råvarenavn = ?, Mængde = ?, Genbestilling = ? WHERE IngrediensID = ?;");
 
+            statement.setInt(1, råvareDTO.getProduktionsID());
+            statement.setInt(2, råvareDTO.getIngrediensID());
+            statement.setString(3, råvareDTO.getRåvarenavn());
+            statement.setInt(4, råvareDTO.getmængde());
+            statement.setBoolean(5, råvareDTO.getGenbestilling());
+            statement.setInt(6, ID);
+
+            statement.executeUpdate();
+
+        } catch (SQLException e){
+            e.printStackTrace();
+        }
     }
 
     public void deleteRåvare(Connection connection, int ID) {
+        try {
+            PreparedStatement statement = connection.prepareStatement("DELETE from Råbare WHERE IngrediensID  = ?");
+
+            statement.setInt(1, ID);
+
+            statement.execute();
+        } catch (SQLException e){
+            e.printStackTrace();
+        }
 
     }
 }
