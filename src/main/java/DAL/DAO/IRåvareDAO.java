@@ -1,9 +1,11 @@
 package DAL.DAO;
 
+import java.sql.Connection;
+
 public interface IRåvareDAO {
 
-    void createRåvare(IRåvareDTO råvareDTO);
-    void getRåvare(int ID);
-    void updateRåvare(IRåvareDTO råvareDTO);
-    void deleteRåvare(int ID);
+    void createRåvare(Connection connection, IRåvareDTO råvareDTO);
+    void getRåvare(Connection connection, int ID);
+    void updateRåvare(Connection connection, IRåvareDTO råvareDTO);
+    void deleteRåvare(Connection connection, int ID);
 }
