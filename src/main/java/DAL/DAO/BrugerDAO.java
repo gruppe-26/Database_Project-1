@@ -27,8 +27,9 @@ public class BrugerDAO implements IBrugerDAO {
             // Ved ikke om den bare overskriver den allerede gemte rolle. Skal lige testes.
             for(int i = 0; i < brugerDTO.getRolleliste().size(); i++){
                 roller.setString(2, brugerDTO.getRoller(i));
+                roller.execute();
             }
-            roller.execute();
+
 
         } catch (SQLException e){e.printStackTrace();}
     }
@@ -79,8 +80,9 @@ public class BrugerDAO implements IBrugerDAO {
             //Ved ikke om den overskriver den allerede gemte rolle. Skal lige testes.
             for(int i = 0; i < brugerDTO.getRolleliste().size(); i++){
                 roller.setString(1,brugerDTO.getRoller(i));
+                roller.executeUpdate();
             }
-            roller.executeUpdate();
+
 
         } catch (SQLException e){e.printStackTrace();}
     }
