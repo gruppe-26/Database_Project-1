@@ -1,5 +1,6 @@
 package DAL.DTO;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class BrugerDTO implements IBrugerDTO {
@@ -7,9 +8,9 @@ public class BrugerDTO implements IBrugerDTO {
     int brugerID;
     String brugernavn;
     boolean admin;
-    List<String> roller;
+    ArrayList<String> roller;
 
-    public BrugerDTO(int brugerID, String brugernavn, boolean admin, List<String> roller){
+    public BrugerDTO(int brugerID, String brugernavn, boolean admin, ArrayList<String> roller){
 
         this.brugerID = brugerID;
         this.brugernavn = brugernavn;
@@ -30,7 +31,9 @@ public class BrugerDTO implements IBrugerDTO {
         return this.admin;
     }
 
-    public List getRoller() {
-        return this.roller;
+    public String getRoller(int i) {
+        return this.roller.get(i);
     }
+
+    public List getRolleliste() {return  this.roller;}
 }

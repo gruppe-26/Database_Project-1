@@ -6,5 +6,6 @@ public interface IBrugerDTO {
     int getBrugerID();
     String getBrugernavn();
     Boolean getAdmin();
-    List getRoller();
+    String getRoller(int i);
+    List getRolleliste();
 }
