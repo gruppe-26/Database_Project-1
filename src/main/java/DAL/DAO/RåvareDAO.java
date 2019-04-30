@@ -50,7 +50,7 @@ public class RåvareDAO implements IRåvareDAO {
         return null;
     }
 
-    public void updateRåvare(Connection connection, IRåvareDTO råvareDTO, int ID) {
+    public void updateRåvare(Connection connection, IRåvareDTO råvareDTO) {
         try {
             PreparedStatement statement = connection.prepareStatement("UPDATE Råvare SET ProduktionsID = ?, IngrediensID = ?, Råvarenavn = ?, Mængde = ?, Genbestilling = ? WHERE IngrediensID = ?;");
 
@@ -59,7 +59,7 @@ public class RåvareDAO implements IRåvareDAO {
             statement.setString(3, råvareDTO.getRåvarenavn());
             statement.setInt(4, råvareDTO.getmængde());
             statement.setBoolean(5, råvareDTO.getGenbestilling());
-            statement.setInt(6, ID);
+            statement.setInt(6, råvareDTO.getIngrediensID());
 
             statement.executeUpdate();
 
@@ -70,7 +70,7 @@ public class RåvareDAO implements IRåvareDAO {
 
     public void deleteRåvare(Connection connection, int ID) {
         try {
-            PreparedStatement statement = connection.prepareStatement("DELETE from Råbare WHERE IngrediensID  = ?");
+            PreparedStatement statement = connection.prepareStatement("DELETE from Råvare WHERE IngrediensID  = ?;");
 
             statement.setInt(1, ID);
 
