@@ -1,6 +1,6 @@
 package DAL.DTO;
 
-public class IngrediensDTO implements IIngredientDTO{
+public class IngrediensDTO implements IIngrediensDTO {
 
     int opskriftID;
     String ingrediensnavn;

@@ -1,6 +1,6 @@
 package DAL.DTO;
 
-public interface IIngredientDTO {
+public interface IIngrediensDTO {
 
     int getOpskriftID();
     String getIngrediensNavn();
