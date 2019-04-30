@@ -9,7 +9,7 @@ public class BrugerDTO implements IBrugerDTO {
     boolean admin;
     List<String> roller;
 
-    public void BrugerDTO(int brugerID, String brugernavn, boolean admin, List<String> roller){
+    public BrugerDTO(int brugerID, String brugernavn, boolean admin, List<String> roller){
 
         this.brugerID = brugerID;
         this.brugernavn = brugernavn;
