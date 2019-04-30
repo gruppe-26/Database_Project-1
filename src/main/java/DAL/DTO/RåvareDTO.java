@@ -8,7 +8,7 @@ public class RåvareDTO implements IRåvareDTO{
     int mængde;
     boolean genbestilling;
 
-    public void RåvareDTO(int produktionsID, int ingrediensID, String råvarenavn, int mængde, boolean genbestilling){
+    public RåvareDTO(int produktionsID, int ingrediensID, String råvarenavn, int mængde, boolean genbestilling){
 
         this.produktionsID = produktionsID;
         this.ingrediensID = ingrediensID;
