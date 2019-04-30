@@ -13,7 +13,7 @@ public class ProduktionDTO implements IProduktionDTO {
     int brugerID;
     int opskriftID;
 
-    public void ProduktionDTO(int produktionsID, int produktionsmængde, String produktionsstatus, int brugerID, int opskriftID, Date startdato, Date slutdato){
+    public ProduktionDTO(int produktionsID, int produktionsmængde, String produktionsstatus, int brugerID, int opskriftID, Date startdato, Date slutdato){
 
         this.brugerID = brugerID;
         this.opskriftID = opskriftID;

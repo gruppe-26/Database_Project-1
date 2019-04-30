@@ -9,7 +9,7 @@ public class OpskriftDTO implements IOpskriftDTO {
     Date dato;
     int brugerID;
 
-    public void OpskriftDTO(int opskriftID, String opskriftnavn, Date date, int brugerID){
+    public OpskriftDTO(int opskriftID, String opskriftnavn, Date date, int brugerID){
 
         this.opskriftID = opskriftID;
         this.opskriftnavn = opskriftnavn;

@@ -7,7 +7,7 @@ public class IngrediensDTO implements IIngrediensDTO {
     int mængde;
     int ingrediensID;
 
-    public void IngrediensDTO(int opskriftID, String ingrediensnavn, int mængde, int ingrediensID){
+    public IngrediensDTO(int opskriftID, String ingrediensnavn, int mængde, int ingrediensID){
 
         this.opskriftID = opskriftID;
         this.ingrediensnavn = ingrediensnavn;
