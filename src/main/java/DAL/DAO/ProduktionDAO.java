@@ -73,11 +73,15 @@ public class ProduktionDAO implements IProduktionDAO {
         }
     }
 
-    public void endProduktion(Connection connection, int ID) {
+    public void endProduktion(Connection connection, IProduktionDTO produktionDTO) {
         try {
-            PreparedStatement statement = connection.prepareStatement("UPDATE Produktion SET Produktionsstatus = ? WHERE ProduktionsID = ?;");
+            PreparedStatement statement = connection.prepareStatement("UPDATE Produktion SET Produktionsstatus = ?, Slutdato = ?  WHERE ProduktionsID = ?;");
 
-            statement.setInt(1, ID);
+            Date sqlDateslut = new Date(produktionDTO.getSlutDato().getTime());
+
+            statement.setString(1,produktionDTO.getProduktionsstatus());
+            statement.setDate(2,sqlDateslut);
+            statement.setInt(3, produktionDTO.getBrugerID());
 
             statement.executeUpdate();
 
@@ -85,4 +89,18 @@ public class ProduktionDAO implements IProduktionDAO {
             e.printStackTrace();
         }
     }
+
+    public void deleteProduktion(Connection connection, int ID) {
+        try {
+            PreparedStatement statement = connection.prepareStatement("DELETE FROM Produktion WHERE = ?;");
+
+            statement.setInt(1,ID);
+
+            statement.execute();
+
+        } catch (SQLException e){
+            e.printStackTrace();
+        }
+    }
+
 }
