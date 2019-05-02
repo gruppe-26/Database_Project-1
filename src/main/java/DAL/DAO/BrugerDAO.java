@@ -15,7 +15,7 @@ public class BrugerDAO implements IBrugerDAO {
     public void createBruger(Connection connection, IBrugerDTO brugerDTO) {
         try {
             PreparedStatement statement = connection.prepareStatement("INSERT INTO Bruger VALUES (?,?,?)");
-            PreparedStatement roller = connection.prepareStatement("INSERT INTO roller VALUES (?,?)");
+            PreparedStatement roller = connection.prepareStatement("INSERT INTO Roller VALUES (?,?)");
 
             statement.setInt(1,brugerDTO.getBrugerID());
             statement.setString(2,brugerDTO.getBrugernavn());
@@ -37,7 +37,7 @@ public class BrugerDAO implements IBrugerDAO {
     public BrugerDTO getBruger(Connection connection, int ID) {
         try {
             PreparedStatement statement = connection.prepareStatement("SELECT*FROM Bruger WHERE BrugerID = ?");
-            PreparedStatement roller = connection.prepareStatement("SELECT*FROM roller WHERE BrugerID = ?");
+            PreparedStatement roller = connection.prepareStatement("SELECT*FROM Roller WHERE BrugerID = ?");
 
             statement.setInt(1,ID);
 
@@ -70,7 +70,7 @@ public class BrugerDAO implements IBrugerDAO {
     public void updateBruger(Connection connection, IBrugerDTO brugerDTO) {
         try {
             PreparedStatement statement = connection.prepareStatement("UPDATE Bruger SET Brugernavn = ?, Admin = ? WHERE BrugerID = ?");
-            PreparedStatement roller = connection.prepareStatement("UPDATE roller SET Rolle = ? WHERE BrugerID = ?");
+            PreparedStatement roller = connection.prepareStatement("UPDATE Roller SET Rolle = ? WHERE BrugerID = ?");
 
             statement.setString(1,brugerDTO.getBrugernavn());
             statement.setBoolean(2,brugerDTO.getAdmin());
@@ -90,7 +90,7 @@ public class BrugerDAO implements IBrugerDAO {
     public void deleteBruger(Connection connection, int ID) {
         try {
             PreparedStatement statement = connection.prepareStatement("DELETE*FROM Bruger WHERE BrugerID = ?");
-            PreparedStatement roller = connection.prepareStatement("DELETE*FROM Rolle WHERE BrugerID = ?");
+            PreparedStatement roller = connection.prepareStatement("DELETE*FROM Roller WHERE BrugerID = ?");
 
             statement.setInt(1,ID);
             statement.execute();
