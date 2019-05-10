@@ -30,7 +30,7 @@ public class ProduktionDAO implements IProduktionDAO {
 
     public IProduktionDTO getProduktion(Connection connection, int ID) {
         try {
-            PreparedStatement statement = connection.prepareStatement("SELECT * FROM Produktion WHERE ProfuktionsID = ?;");
+            PreparedStatement statement = connection.prepareStatement("SELECT * FROM Produktion WHERE ProduktionsID = ?;");
 
             statement.setInt(1, ID);
 
@@ -65,6 +65,7 @@ public class ProduktionDAO implements IProduktionDAO {
             statement.setDate(5, sqlDateStart);
             statement.setDate(6, sqlDateSlut);
             statement.setInt(7, produktionDTO.getBrugerID());
+            statement.setInt(8, produktionDTO.getProduktionsID());
 
             statement.executeUpdate();
 

@@ -60,6 +60,7 @@ public class OpskriftDAO implements IOpskriftDAO {
             statement.setString(2, opskriftDTO.getOpskriftNavn());
             statement.setDate(3, sqlDate);
             statement.setInt(4, opskriftDTO.getBrugerID());
+            statement.setInt(5, opskriftDTO.getOpskriftID());
 
             statement.executeUpdate();
 

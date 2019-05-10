@@ -57,6 +57,7 @@ public class IngrediensDAO implements IIngrediensDAO {
             statement.setString(2, ingredientDTO.getIngrediensNavn());
             statement.setInt(3, ingredientDTO.getIngrediensID());
             statement.setInt(4, ingredientDTO.getMængde());
+            statement.setInt(5, ingredientDTO.getIngrediensID());
 
             statement.executeUpdate();
 

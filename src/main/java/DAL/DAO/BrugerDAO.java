@@ -80,6 +80,7 @@ public class BrugerDAO implements IBrugerDAO {
             //Ved ikke om den overskriver den allerede gemte rolle. Skal lige testes.
             for(int i = 0; i < brugerDTO.getRolleliste().size(); i++){
                 roller.setString(1,brugerDTO.getRoller(i));
+                roller.setInt(2, brugerDTO.getBrugerID());
                 roller.executeUpdate();
             }
 
@@ -89,8 +90,8 @@ public class BrugerDAO implements IBrugerDAO {
 
     public void deleteBruger(Connection connection, int ID) {
         try {
-            PreparedStatement statement = connection.prepareStatement("DELETE*FROM Bruger WHERE BrugerID = ?;");
-            PreparedStatement roller = connection.prepareStatement("DELETE*FROM Roller WHERE BrugerID = ?;");
+            PreparedStatement statement = connection.prepareStatement("DELETE FROM Bruger WHERE BrugerID = ?;");
+            PreparedStatement roller = connection.prepareStatement("DELETE FROM Roller WHERE BrugerID = ?;");
 
             statement.setInt(1,ID);
             statement.execute();
