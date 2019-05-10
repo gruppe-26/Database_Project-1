@@ -36,4 +36,15 @@ public class RåvareDTO implements IRåvareDTO{
     public boolean getGenbestilling() {
         return this.genbestilling;
     }
+
+    @Override
+    public String toString() {
+        return "RåvareDTO{" +
+                "produktionsID=" + produktionsID +
+                ", ingrediensID=" + ingrediensID +
+                ", råvarenavn='" + råvarenavn + '\'' +
+                ", mængde=" + mængde +
+                ", genbestilling=" + genbestilling +
+                '}';
+    }
 }

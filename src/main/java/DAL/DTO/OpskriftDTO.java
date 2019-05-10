@@ -33,4 +33,14 @@ public class OpskriftDTO implements IOpskriftDTO {
     public int getBrugerID() {
         return this.brugerID;
     }
+
+    @Override
+    public String toString() {
+        return "OpskriftDTO{" +
+                "opskriftID=" + opskriftID +
+                ", opskriftnavn='" + opskriftnavn + '\'' +
+                ", dato=" + dato +
+                ", brugerID=" + brugerID +
+                '}';
+    }
 }

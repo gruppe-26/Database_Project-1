@@ -31,4 +31,14 @@ public class IngrediensDTO implements IIngrediensDTO {
     public int getIngrediensID() {
         return this.ingrediensID;
     }
+
+    @Override
+    public String toString() {
+        return "IngrediensDTO{" +
+                "opskriftID=" + opskriftID +
+                ", ingrediensnavn='" + ingrediensnavn + '\'' +
+                ", mængde=" + mængde +
+                ", ingrediensID=" + ingrediensID +
+                '}';
+    }
 }

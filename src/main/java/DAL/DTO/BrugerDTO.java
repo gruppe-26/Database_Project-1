@@ -36,4 +36,14 @@ public class BrugerDTO implements IBrugerDTO {
     }
 
     public List getRolleliste() {return  this.roller;}
+
+    @Override
+    public String toString() {
+        return "BrugerDTO{" +
+                "brugerID=" + brugerID +
+                ", brugernavn='" + brugernavn + '\'' +
+                ", admin=" + admin +
+                ", roller=" + roller +
+                '}';
+    }
 }

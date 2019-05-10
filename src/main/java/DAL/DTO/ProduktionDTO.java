@@ -52,4 +52,17 @@ public class ProduktionDTO implements IProduktionDTO {
     public Date getSlutDato() {
         return this.slutdato;
     }
+
+    @Override
+    public String toString() {
+        return "ProduktionDTO{" +
+                "produktionsID=" + produktionsID +
+                ", produktionsmængde=" + produktionsmængde +
+                ", startdato=" + startdato +
+                ", slutdato=" + slutdato +
+                ", produktionsstatus='" + produktionsstatus + '\'' +
+                ", brugerID=" + brugerID +
+                ", opskriftID=" + opskriftID +
+                '}';
+    }
 }
