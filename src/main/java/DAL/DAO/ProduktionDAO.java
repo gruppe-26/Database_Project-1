@@ -6,6 +6,7 @@ import DAL.DTO.ProduktionDTO;
 import java.sql.*;
 
 public class ProduktionDAO implements IProduktionDAO {
+
     public void createProduktion(Connection connection, IProduktionDTO produktionDTO) {
         try {
             PreparedStatement statement = connection.prepareStatement("INSERT into Produktion values(?,?,?,?,?,?,?);");

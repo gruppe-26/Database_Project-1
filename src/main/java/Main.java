@@ -39,13 +39,15 @@ public class Main {
         Date date = new Date();
         Date enddate = new Date();
 
-        brugerDAO.createBruger(connect.getConnection(),brugerDTO = new BrugerDTO(1,"Bente",true,laborant));
-        /*brugerDAO.createBruger(connect.getConnection(),brugerDTO = new BrugerDTO(2,"Svend",true,produktionsleder));
-        brugerDAO.createBruger(connect.getConnection(),brugerDTO = new BrugerDTO(3,"Keith",false,farmaceut));
-       */
-        //opskriftDAO.createOpskrift(connect.getConnection(),opskriftDTO = new OpskriftDTO(1,"opskrift", date,3));
-        //produktionDAO.createProduktion(connect.getConnection(),produktionDTO = new ProduktionDTO(1,20000,"igang",2,opskriftDTO.getOpskriftID(), date,enddate));
+       brugerDAO.createBruger(connect.getConnection(),brugerDTO = new BrugerDTO(1,"Bente",true,laborant));
+        //brugerDAO.createBruger(connect.getConnection(),brugerDTO = new BrugerDTO(2,"Svend",true,produktionsleder));
+        //brugerDAO.createBruger(connect.getConnection(),brugerDTO = new BrugerDTO(3,"Keith",false,farmaceut));
+
+     //   opskriftDAO.createOpskrift(connect.getConnection(),opskriftDTO = new OpskriftDTO(1,"opskrift", date,3));
+//        opskriftDAO.createOpskrift(connect.getConnection(),opskriftDTO = new OpskriftDTO(2,"dank",date,3));
+//        produktionDAO.createProduktion(connect.getConnection(),produktionDTO = new ProduktionDTO(1,20000,"igang",2,opskriftDTO.getOpskriftID(), date,enddate));
         ingrediensDAO.createIngrediens(connect.getConnection(),ingrediensDTO = new IngrediensDTO(1,"CarbonDioxid",4,1));
+//        ingrediensDAO.createIngrediens(connect.getConnection(),ingrediensDTO = new IngrediensDTO(2,"salt",5,2));
         råvareDAO.createRåvare(connect.getConnection(),råvareDTO = new RåvareDTO(1,1,"CarbonDioxid",1,false));
 
         System.out.println(brugerDAO.getBruger(connect.getConnection(),1).getBrugernavn());
@@ -71,8 +73,9 @@ public class Main {
 
         brugerDAO.deleteBruger(connect.getConnection(),1);
         råvareDAO.deleteRåvare(connect.getConnection(),1);
-        opskriftDAO.deleteOpskrift(connect.getConnection(),1);
         ingrediensDAO.deleteIngrediens(connect.getConnection(),1);
+        opskriftDAO.deleteOpskrift(connect.getConnection(),1);
+
 
         connect.closeConnection();
     }

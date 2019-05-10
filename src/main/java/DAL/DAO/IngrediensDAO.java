@@ -37,7 +37,7 @@ public class IngrediensDAO implements IIngrediensDAO {
             IIngrediensDTO ingrediensDTO = null;
 
             while (resultSet.next()){
-                ingrediensDTO = new IngrediensDTO(resultSet.getInt(1), resultSet.getString(2), resultSet.getInt(3), resultSet.getInt(4));
+                ingrediensDTO = new IngrediensDTO(resultSet.getInt(1), resultSet.getString(2), resultSet.getInt(4), resultSet.getInt(3));
             }
 
             return ingrediensDTO;
