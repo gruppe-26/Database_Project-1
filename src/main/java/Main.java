@@ -45,13 +45,13 @@ public class Main {
        */
         //opskriftDAO.createOpskrift(connect.getConnection(),opskriftDTO = new OpskriftDTO(1,"opskrift", date,3));
         //produktionDAO.createProduktion(connect.getConnection(),produktionDTO = new ProduktionDTO(1,20000,"igang",2,opskriftDTO.getOpskriftID(), date,enddate));
-        ingrediensDAO.createIngrediens(connect.getConnection(),ingrediensDTO = new IngrediensDTO(1,"CarbonDioxid",200,1));
-        råvareDAO.createRåvare(connect.getConnection(),råvareDTO = new RåvareDTO(1,1,"CarbonDioxid",349,false));
+        ingrediensDAO.createIngrediens(connect.getConnection(),ingrediensDTO = new IngrediensDTO(1,"CarbonDioxid",4,1));
+        råvareDAO.createRåvare(connect.getConnection(),råvareDTO = new RåvareDTO(1,1,"CarbonDioxid",1,false));
 
         System.out.println(brugerDAO.getBruger(connect.getConnection(),1).getBrugernavn());
         System.out.println(opskriftDAO.getOpskrift(connect.getConnection(),1));
         produktionDAO.getProduktion(connect.getConnection(),1);
-        ingrediensDAO.getIngrediens(connect.getConnection(),1);
+        System.out.println(ingrediensDAO.getIngrediens(connect.getConnection(),1).getIngrediensID());
         råvareDAO.getRåvare(connect.getConnection(),1);
 
         brugerDAO.updateBruger(connect.getConnection(),brugerDTO = new BrugerDTO(1,"Bente",false,laborant));
