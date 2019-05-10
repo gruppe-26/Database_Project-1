@@ -93,11 +93,12 @@ public class BrugerDAO implements IBrugerDAO {
             PreparedStatement statement = connection.prepareStatement("DELETE FROM Bruger WHERE BrugerID = ?;");
             PreparedStatement roller = connection.prepareStatement("DELETE FROM Roller WHERE BrugerID = ?;");
 
+            roller.setInt(1,ID);
+            roller.execute();
+
             statement.setInt(1,ID);
             statement.execute();
 
-            roller.setInt(1,ID);
-            roller.execute();
 
         } catch (SQLException e){e.printStackTrace();}
     }

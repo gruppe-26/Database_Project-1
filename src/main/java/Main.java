@@ -40,22 +40,23 @@ public class Main {
         Date enddate = new Date();
 
         brugerDAO.createBruger(connect.getConnection(),brugerDTO = new BrugerDTO(1,"Bente",true,laborant));
-        brugerDAO.createBruger(connect.getConnection(),brugerDTO = new BrugerDTO(2,"Svend",true,produktionsleder));
+        /*brugerDAO.createBruger(connect.getConnection(),brugerDTO = new BrugerDTO(2,"Svend",true,produktionsleder));
         brugerDAO.createBruger(connect.getConnection(),brugerDTO = new BrugerDTO(3,"Keith",false,farmaceut));
-        opskriftDAO.createOpskrift(connect.getConnection(),opskriftDTO = new OpskriftDTO(1,"Zuperduper smertestillende opskrift", date,3));
-        produktionDAO.createProduktion(connect.getConnection(),produktionDTO = new ProduktionDTO(1,20000,"I gang",2,1, date,enddate));
+       */
+        //opskriftDAO.createOpskrift(connect.getConnection(),opskriftDTO = new OpskriftDTO(1,"opskrift", date,3));
+        //produktionDAO.createProduktion(connect.getConnection(),produktionDTO = new ProduktionDTO(1,20000,"igang",2,opskriftDTO.getOpskriftID(), date,enddate));
         ingrediensDAO.createIngrediens(connect.getConnection(),ingrediensDTO = new IngrediensDTO(1,"CarbonDioxid",200,1));
         råvareDAO.createRåvare(connect.getConnection(),råvareDTO = new RåvareDTO(1,1,"CarbonDioxid",349,false));
 
-        brugerDAO.getBruger(connect.getConnection(),1);
-        opskriftDAO.getOpskrift(connect.getConnection(),1);
+        System.out.println(brugerDAO.getBruger(connect.getConnection(),1).getBrugernavn());
+        System.out.println(opskriftDAO.getOpskrift(connect.getConnection(),1));
         produktionDAO.getProduktion(connect.getConnection(),1);
         ingrediensDAO.getIngrediens(connect.getConnection(),1);
         råvareDAO.getRåvare(connect.getConnection(),1);
 
         brugerDAO.updateBruger(connect.getConnection(),brugerDTO = new BrugerDTO(1,"Bente",false,laborant));
-        opskriftDAO.updateOpskrift(connect.getConnection(),opskriftDTO = new OpskriftDTO(1,"Superduper smertestillende opskrift",date,3));
-        produktionDAO.updateProduktion(connect.getConnection(),produktionDTO = new ProduktionDTO(1,20,"I gang",2,1,date,enddate));
+        opskriftDAO.updateOpskrift(connect.getConnection(),opskriftDTO = new OpskriftDTO(1,"Smertestillende opskrift",date,3));
+        produktionDAO.updateProduktion(connect.getConnection(),produktionDTO = new ProduktionDTO(1,20,"igang",2,1,date,enddate));
         ingrediensDAO.updateIngrediens(connect.getConnection(),ingrediensDTO = new IngrediensDTO(1,"CarbonDioxid",300,1));
         råvareDAO.updateRåvare(connect.getConnection(),råvareDTO = new RåvareDTO(1,2,"Uran",2,false));
 

@@ -72,9 +72,12 @@ public class OpskriftDAO implements IOpskriftDAO {
     public void deleteOpskrift(Connection connection, int ID) {
         try {
             PreparedStatement statement = connection.prepareStatement("DELETE from Opskrift WHERE OpskriftID  = ?;");
+            PreparedStatement ingrediens = connection.prepareStatement("DELETE FROM Ingrediens WHERE OpskriftID = ?;");
 
+            ingrediens.setInt(1,ID);
             statement.setInt(1, ID);
 
+            ingrediens.execute();
             statement.execute();
         } catch (SQLException e){
             e.printStackTrace();

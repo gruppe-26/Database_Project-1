@@ -39,7 +39,7 @@ public class ProduktionDAO implements IProduktionDAO {
             IProduktionDTO produktionDTO = null;
 
             while (resultSet.next()){
-                produktionDTO = new ProduktionDTO(resultSet.getInt(1), resultSet.getInt(2), resultSet.getString(3), resultSet.getInt(4), resultSet.getInt(5), resultSet.getDate(6), resultSet.getDate(7));
+                produktionDTO = new ProduktionDTO(resultSet.getInt(1), resultSet.getInt(2), resultSet.getString(4), resultSet.getInt(3),resultSet.getInt(7), resultSet.getDate(5), resultSet.getDate(6));
             }
 
             return produktionDTO;
